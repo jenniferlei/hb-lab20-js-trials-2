@@ -36,20 +36,3 @@ function getMelonsAtPrice(price) {
 
 console.log(getMelonsAtPrice(2.50))
 console.log(getMelonsAtPrice(3))
-
-// def print_melon_at_price(price):
-//     """Return the list of melons that cost `price`.
-
-//     Arguments:
-//         price (float)
-
-//     Returns:
-//         list: List of melons that cost `price`
-//         None: If there are no melons that cost `price`
-//     """
-
-
-//     if price not in melon_prices:
-//         return
-
-//     return sorted(melon_prices[price])
