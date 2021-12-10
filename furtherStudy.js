@@ -19,12 +19,12 @@ console.log(wordsInCommon(['hello', 'goodbye', 'tomorrow'], ['hello', 'goodbye',
 function kidsGame(names) {
   const output = [names.shift()];
 
-  const firstLetterToWords = {};
+  firstLetterToWords = {};
 
   for (const name of names) {
-    const firstChar = name [0];
+    const firstLetter = name[0];
     if (!firstLetterToWords[firstChar]) {
-      firstLetterToWords[firstChar] = [name];
+      firstLetterToWords[firstLetter] = [name];
     } else {
       firstLetterToWords[firstChar].push(name);
     }
@@ -32,11 +32,11 @@ function kidsGame(names) {
 
   while (true) {
     const startLetter = output[output.length - 1];
-    const startLetterChar = startLetter[startLetter.length -1];
+    const startLetterChar = startLetter[startLetter.length - 1];
 
     if (
-      firstLetterToWords[startLetterChar] === undefined ||
-      firstLetterToWords[startLetter].length === 0
+      firstLetterToWords[lastWordChar] === undefined ||
+      firstLetterToWords[lastWordChar].length === 0
     ) {
       break;
     }
@@ -48,5 +48,12 @@ function kidsGame(names) {
   return output;
 }
 
+
 console.log(kidsGame(["bagon", "baltoy", "yamask", "starly", "nosepass", "kalob", "nicky", "booger"]));
-// ['bagon', 'nosepass', 'starly', 'yamask', 'kalob', 'baltoy']
+console.log("should be: ['bagon', 'nosepass', 'starly', 'yamask', 'kalob', 'baltoy']");
+
+console.log(kidsGame(["apple", "berry", "cherry"]));
+console.log("should be: ['apple']");
+
+console.log(kidsGame(["noon", "naan", "nun"]));
+console.log("should be: ['noon', 'naan', 'nun']");
